@@ -2,11 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <windows.h>
+#define BRWSR "chrome"
+#define NBRWSR "iexplorer"
 
 int main()
 {
-    char str[20];
-    char browser;
+    char str[30];
+    char browser[20];
+
 
     printf("-------------------------------\n");
     printf("|          WebsiteVisit       |\n");
@@ -20,27 +23,22 @@ int main()
     printf("Please enter the link you want to open : ");
     scanf("%s" , str);
 
-    ShellExecute(NULL,"open","C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", str,NULL,SW_SHOWNORMAL);
-
-
-/*    printf("\nPlease choose your web browser. Type chrome or iexplorer \n");
+    printf("\nPlease choose your web browser. Type chrome or iexplorer \n");
     scanf("%s" , browser);
 
-    if(browser == 'chrome') {
+
+    if(strcmp(browser, BRWSR) == 0) {
         ShellExecute(NULL,"open","C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", str,NULL,SW_SHOWNORMAL); }
 
-    if(browser == 'iexplorer') {
+    if(strcmp(browser, NBRWSR) == 0) {
         ShellExecute(NULL,"open","C:\\Program Files\\Internet Explorer\\iexplore.exe", str,NULL,SW_SHOWNORMAL); }
 
-----------------------------------------------------------------------------------------------------------------------------------
+/*
+    Unused Chrome Direct Function
 
-    if (strcmp(browser, "chrome") == 0) {
-        ShellExecute(NULL,"open","C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", str,NULL,SW_SHOWNORMAL); }
+    ShellExecute(NULL,"open","C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", str,NULL,SW_SHOWNORMAL);
 
-    if (strcmp(browser, "iexplorer") == 0) {
-        ShellExecute(NULL,"open","C:\\Program Files\\Internet Explorer\\iexplore.exe", str,NULL,SW_SHOWNORMAL); }
-
- */
+*/
     return 0;
 
 }
